@@ -13,10 +13,11 @@ def readKids(filename):
         for k in kids:
             if k not in s:
                 s.append(k)
-    print("============================")
-    print("  Nickname  Name            ")
-    print("============================")
-    print(s)
+    return kids
+    # print("============================")
+    # print("  Nickname  Name            ")
+    # print("============================")
+    # print(s)
     # for k in kids:
         # print("{0:>10}  {1:<15}".format(k,kids[k].getFullName()))
 
@@ -30,7 +31,10 @@ def main():
             toRemove = int(toRemove)
             for num in range(toRemove):
                 s.pop()
-            print(s[-1])
+            # NEEDS WORK
+            #for k in kids:
+            #    if s[-1] == k:
+            #        print(k)
         except:
             input("Please enter a number in the range of 1-4. Press Enter to continue.")
 main()
