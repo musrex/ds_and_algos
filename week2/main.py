@@ -14,12 +14,7 @@ def readKids(filename):
             if k not in s:
                 s.append(k)
     return kids
-    # print("============================")
-    # print("  Nickname  Name            ")
-    # print("============================")
-    # print(s)
-    # for k in kids:
-        # print("{0:>10}  {1:<15}".format(k,kids[k].getFullName()))
+
 
 def main():
     #filename = input("Enter filename: ")
@@ -41,22 +36,27 @@ def main():
                 # in a try block conver
                 toRemove = int(toRemove)
                 if toRemove in range(1,5):
-                    for num in range(toRemove):
-                        s.pop()
-                    # if the user inputs a number higher than the number of items in the list
                     # we use the number of items as the input and end the program
-                    if len(s) < toRemove:
+                    if len(s) <= toRemove:
                         for num in range(len(s)):
                             s.pop()
-                            print("No more names in the stack")
-                            run = False
-                            break
+                            #print("No more names in the stack")
+                            #run = False
+                            #break
                     # this gets the key from the top of the stack and uses it to retrieve our person object.
                     else:
+                        for num in range(toRemove):
+                            s.pop()
+                    # if the user inputs a number higher than the number of items in the list
+                        print('''============================
+    Lopez Family Farm
+============================''')
                         for k in kids:
                             if s[-1] == k:
+                                    # for k in kids:
+        # print("{0:>10}  {1:<15}".format(k,kids[k].getFullName()))
                                 print(k,kids[k].getFullName(),kids[k].getAge())
-                                print(len(s))
+                                print(f"Stack size: {len(s)}")
                 else:
                     input("Please enter a number in the range of 1-4. Press Enter to continue.")
             except:
