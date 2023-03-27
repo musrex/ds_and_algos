@@ -48,14 +48,9 @@ def main():
                         for num in range(toRemove):
                             s.pop()
                     # if the user inputs a number higher than the number of items in the list
-                        print('''============================
-    Lopez Family Farm
-============================''')
                         for k in kids:
                             if s[-1] == k:
-                                    # for k in kids:
-        # print("{0:>10}  {1:<15}".format(k,kids[k].getFullName()))
-                                print(k,kids[k].getFullName(),kids[k].getAge())
+                                print(f'''    {k},{kids[k].getFullName(),kids[k].getAge()}''')
                                 print(f"Stack size: {len(s)}")
                 else:
                     input("Please enter a number in the range of 1-4. Press Enter to continue.")
