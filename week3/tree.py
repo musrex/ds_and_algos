@@ -48,4 +48,5 @@ def build_product_tree():
 
     root.print_tree()
 
-build_product_tree()
+if __name__ == "__main__":
+    build_product_tree()

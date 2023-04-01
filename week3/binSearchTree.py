@@ -102,4 +102,5 @@ def main():
     print("15 is in the tree:", myTree.check(15))
     myTree.printPostorder()
 
-main()
+if __name__ == "__main__":
+    main()

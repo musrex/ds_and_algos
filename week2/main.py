@@ -50,4 +50,5 @@ def main():
                     input("Please enter a number in the range of 1-4. Press Enter to continue.")
             except:
                 input("Please enter a number in the range of 1-4. Press Enter to continue.")
+
 main()
