@@ -8,6 +8,7 @@ class Tree:
             self.Root = None
         else:
             self.Root = Node(d)
+
     def insert(self, d):
         def __insertHere__(n, d):
             if (n.Data > d):   # if no node left insert here
@@ -33,6 +34,7 @@ class Tree:
                     self.Root.Right = Node(d)
                 else:                         # try right subtree
                     __insertHere__(self.Root.Right, d)
+
     def check(self, d):
         def __check__(n, d):
             if (n == None):
@@ -44,6 +46,7 @@ class Tree:
             elif (n.Data < d):
                 return __check__(n.Right, d)
         return __check__(self.Root, d)
+    
     def printInorder(self):
         def __visit__(n):
             if (n != None):
@@ -53,6 +56,7 @@ class Tree:
         print("\n--------")
         __visit__(self.Root)
         print("\n--------")
+    
     def printPreorder(self):
         def __visit__(n, h):
             if (n != None):
@@ -62,6 +66,7 @@ class Tree:
         print("^^^^^^^^^^")
         __visit__(self.Root, 1)
         print("^^^^^^^^^^")
+    
     def printPostorder(self):
         def __visit__(n, h):
             if (n != None):
