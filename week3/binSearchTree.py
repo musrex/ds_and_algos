@@ -9,6 +9,9 @@ class Tree:
         else:
             self.Root = Node(d)
 
+    def getRoot(self):
+        return self.Root
+
     def insert(self, d):
         def __insertHere__(n, d):
             if (n.Data > d):   # if no node left insert here
