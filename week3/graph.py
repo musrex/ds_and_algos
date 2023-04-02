@@ -4,8 +4,15 @@ class Graph:
         self.graph_dict = {}
         for start, end in self.edges:
             if start in self.graph_dict:
-                pass
+                self.graph_dict[start].append(end)
             else:
+                self.graph_dict[start] = [end]
+        print("Graph dict:", self.graph_dict)
+
+    def get_paths(self, start, end, path=[]):
+        path = path + [start]
+        if start == end:
+            return [path]
 
 if __name__ == "__main__":
     routes = [
@@ -19,7 +26,7 @@ if __name__ == "__main__":
 
     route_graph = Graph(routes)
 
-    d = {
-    "Mumbai": ["Paris","Dubai"],
-    "Paris" : ["Dubai", "New York"]
-    }
+    start = "Mumbai"
+    end = "Mumbai"
+
+    print(f"Paths between {start} and {end}: ", route_graph.get_paths(start, end))
