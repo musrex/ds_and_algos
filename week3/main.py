@@ -1,5 +1,5 @@
 from binSearchTree import *
-from tree import *
+from graph import *
 
 def main():
     #filename = input("Enter filename: ")
@@ -9,22 +9,31 @@ def main():
     for line in data:
         line = line.split()
         for x in line:
-            numbers.insert(x)
-    numbers.printInorder()
+            numbers.insert(int(x))
+    # numbers.printInorder()
     numbers.printPreorder()
-    numbers.printPostorder()
-    result = numbers.check('g')
-    print(result)
-    print(numbers.getRoot())
+    # numbers.printPostorder()
+    print('-----')
 
-# def main():
+    # result = numbers.inOrder()
+    result = numbers.preOrder()
+    # result = numbers.postOrder()
 
-
- #   pass
-
-
-
-
+    matrix = [[0]*len(result) for i in range(len(result))]
+    for x in range(len(result)-1):
+        if result[x] > result[x+1]:
+            weight = result[x] - result[x+1]
+        else:
+            weight = result[x+1] - result[x]
+        if x not in matrix:
+            matrix.append(weight)
+    
+    print(f'''matrix = {matrix[0]}
+         {matrix[1]}
+         {matrix[2]}
+         {matrix[3]}
+         {matrix[4]}
+         {matrix[5:]}''')
 
 
 if __name__ == "__main__":
