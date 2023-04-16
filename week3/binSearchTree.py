@@ -9,6 +9,11 @@ class Tree:
         else:
             self.Root = Node(d)
 
+    def getRoot(self):
+        return self.Root
+
+    
+
     def insert(self, d):
         def __insertHere__(n, d):
             if (n.Data > d):   # if no node left insert here
@@ -56,7 +61,45 @@ class Tree:
         print("\n--------")
         __visit__(self.Root)
         print("\n--------")
+
+    def inOrder(self):
+        val = []
+        def __visit__(n):
+            if (n != None):
+                # Traverse left
+                __visit__(n.Left)
+                # Traverse root
+                val.append(n.Data)
+                # Traverse right
+                __visit__(n.Right)
+        __visit__(self.Root)
+        return val
+
+    def postOrder(self):
+        val = []
+        def __visit__(n):
+            if (n != None):
+                # Traverse left
+                __visit__(n.Left)
+                # Traverse right
+                __visit__(n.Right)
+                val.append(n.Data)
+        __visit__(self.Root)
+        return val
     
+    def preOrder(self):
+        val = []
+        def __visit__(n):
+            if (n != None):
+                # Traverse root
+                val.append(n.Data)
+                # Traverse left
+                __visit__(n.Left)
+                # Traverse right
+                __visit__(n.Right)
+        __visit__(self.Root)
+        return val
+
     def printPreorder(self):
         def __visit__(n, h):
             if (n != None):
