@@ -26,7 +26,7 @@ def main():
     
     # Print the differences and the graph
     print("Differences between nodes:", differences)
-    print("Matrix):\n", graph)
+    print("Matrix:\n", graph)
 
 
 
